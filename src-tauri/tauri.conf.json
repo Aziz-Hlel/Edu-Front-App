@@ -4,15 +4,23 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:50",
-    "distDir": "../src"
+    "distDir": "../dist"
   },
   "package": {
-    "productName": "vite-project",
+    "productName": "EduManage By Tigana",
     "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": [
+          "https://tigana1.pythonanywhere.com/*",
+          "http://tigana1.pythonanywhere.com/*",
+          "http://localhost/*"
+        ]
+      }
     },
     "bundle": {
       "active": true,
@@ -29,7 +37,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.tigana.edumanage",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -56,10 +64,12 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
         "resizable": true,
-        "title": "StudentsManagement",
-        "width": 800
+        "title": "EduManage By Tigana",
+        "maximized": true,
+        "focus": true,
+        "fileDropEnabled": false,
+        "minHeight": 650
       }
     ]
   }
